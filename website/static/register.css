@@ -22,7 +22,7 @@ body {
     left: 50%; /* Horizontally center */
     transform: translate(-50%, -50%); /* Adjust to ensure perfect centering */
     width: 400px;
-    height: 500px;
+    height: 600px;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     border-radius: 40px;
