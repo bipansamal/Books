@@ -118,6 +118,10 @@ USE_I18N = True
 
 USE_TZ = True
 
+APP_NAME = 'Bipan Website'
+
+APP_URL = 'http://localhost:8000'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -131,3 +135,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     BASE_DIR, "static"
 ]
+
+
+# to send email in the development server
+# Looking to send emails in production? Check out our Email API/SMTP product!
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = 'de44326dfe877f'
+EMAIL_HOST_PASSWORD = 'c740b40bcb8274'
+EMAIL_PORT = '2525'

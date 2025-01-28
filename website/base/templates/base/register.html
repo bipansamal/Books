@@ -70,4 +70,11 @@
         </form>
     </div>
 </body>
+<script>
+    $("#eyeIcon").click(function() {
+        let input = $("#passwordInput");
+        input.attr("type", input.attr("type") === "password" ? "text" : "password");
+        $("#eyeIcon").toggleClass("fa-eye fa-eye-slash");
+    });
+</script>
 </html>

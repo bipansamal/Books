@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+		<head>
+				<meta charset="utf-8">
+				<title>details</title>
+				<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+		</head>
+		<body>
+            <form action="" method="POST"> 
+                {%csrf_token%} 
+                <textarea name="description">
+                    {{about.description}}
+                </textarea>
+                <input type="text" name="status" value="{{about.status}}">
+                <button type="submit">submit</button>
+            </form>
+        
+
+				<script>
+						CKEDITOR.replace( 'description' );
+				</script>
+		</body>
+</html>

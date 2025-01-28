@@ -7,33 +7,58 @@
     <!-- Font Awesome CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/login.css">
-
 </head>
 <body>
     <div class="container">
         <h2>Login</h2>
-        <form action="">
+        {% comment %} {% if messages %}
+        {% for message in messages %}
+        {% if message.tags == "error" %}
+
+        <div class="alert alert-danger" role="alert">
+            {{message}}
+        </div>
+        {% else %}
+        <div class="alert alert-success" role="alert">
+            {{message}}
+        </div>
+
+        {% endif %}
+        {% endfor %}
+        {% endif %} {% endcomment %}
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
             <div class="form-group">
-                <input type="emaiil" required>
-                <label for="">Email</label>
+                <input type="email" required name="email" placeholder="Email">
+                {% comment %} <label for="">Email</label> {% endcomment %}
                 <i class="fa-solid fa-envelope"></i>
 
             </div>
             <div class="form-group">
-                <input type="password" required>
-                <label for="">Password</label>
-                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="passwordInput" required name="password" placeholder="Password">
+                {% comment %} <label for="">Password</label> {% endcomment %}
+                <i id="eyeIcon" class="fa-solid fa-eye" onclick="togglePassword()"></i>
+                {% comment %} <i class="fa-solid fa-lock"></i> {% endcomment %}
             </div>
 
             <p><input type="checkbox">Remember 
-            Me <a href="#">Forget Password
+            Me <a href="{% url "forget.password" %}">Forget Password
             </a></p>
 
-            <input id="btn" type="button" value="Login">
+            <input id="btn" type="submit" class="btn btn-primary w-100" value="Login">
             <p>Don't have a account? <a
             href="{% url "register" %}">Register</a></p>
 
         </form>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $("#eyeIcon").click(function() {
+        let input = $("#passwordInput");
+        input.attr("type", input.attr("type") === "password" ? "text" : "password");
+        $("#eyeIcon").toggleClass("fa-eye fa-eye-slash");
+    });
+</script>
 </html>
