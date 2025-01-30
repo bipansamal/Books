@@ -17,13 +17,14 @@
         </div> 
 
         <div class="items">
-            <li><i class="fa-solid fa-chart-pie"></i><a href="#">Dashboard</a></li>
-            <li><i class="fab fa-uikit"></i><a href="#">UI Elements</a></li>
+            <li><i class="fa-solid fa-chart-pie"></i><a href="{% url "dashboard" %}">Dashboard</a></li>
+            <li><i class="fab fa-uikit"></i><a href="{% url "profile" %}">Profile</a></li>
             <li><i class="fa-solid fa-table"></i><a href="#">Tables</a></li>
             <li><i class="fa-brands fa-wpforms"></i><a href="#">Forms</a></li>
             <li><i class="fa-regular fa-credit-card"></i><a href="#">Cards</a></li>
             <li><i class="fas fa-hamburger"></i><a href="#">Modal</a></li>
             <li><i class="fa-solid fa-money-bill-trend-up"></i><a href="#">Blank</a></li>
+            <li><i class="fa-solid fa-lock"></i><a href="{% url 'change-password' %}">Change Password</a></li>
         </div>
     </section>
 
@@ -92,142 +93,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="people">
-                            <img src="/static/images/1.jpg" alt="">
-                            <div class="people-de">
-                                <h5>John Doe</h5>
-                                <p>John@gmail.com</p>
+                    {% for user in users %}
+                        <tr>
+                            <td class="people">
+                                <img src="{{user.profile.image.url}}" alt="">
+                                <div class="people-de">
+                                    <h5>{{user.first_name}}</h5>
+                                    <p>{{user.username}} {{user.id}}</p>
 
-                            </div>
-                        </td>
-                        <td class="people-des">
-                            <h5>Software Engineer</h5>
-                            <p>Web dev</p>
-                        </td>
-                        <td class="active"><p>Active</p></td>
-                        <td class="role"><p>Owner</p></td>
-                        <td class="edit"><a href="#">Edit</a></td>
-                    </tr>
-                    <tr>
-                        <td class="people">
-                            <img src="/static/images/2.jpg" alt="">
-                            <div class="people-de">
-                                <h5>Oscar Rhy</h5>
-                                <p>Oscar@gmail.com</p>
-
-                            </div>
-                        </td>
-                        <td class="people-des">
-                            <h5>Software Engineer</h5>
-                            <p>Web dev</p>
-                        </td>
-                        <td class="active"><p>Active</p></td>
-                        <td class="role"><p>Owner</p></td>
-                        <td class="edit"><a href="#">Edit</a></td>
-                    </tr>
-                    <tr>
-                        <td class="people">
-                            <img src="/static/images/3.jpg" alt="">
-                            <div class="people-de">
-                                <h5>George Reece</h5>
-                                <p>George@gmail.com</p>
-
-                            </div>
-                        </td>
-                        <td class="people-des">
-                            <h5>Software Engineer</h5>
-                            <p>Web dev</p>
-                        </td>
-                        <td class="active"><p>Active</p></td>
-                        <td class="role"><p>Owner</p></td>
-                        <td class="edit"><a href="#">Edit</a></td>
-                    </tr>
-                    <tr>
-                        <td class="people">
-                            <img src="/static/images/4.jpg" alt="">
-                            <div class="people-de">
-                                <h5>Rio Munt</h5>
-                                <p>Rio@gmail.com</p>
-
-                            </div>
-                        </td>
-                        <td class="people-des">
-                            <h5>Software Engineer</h5>
-                            <p>Web dev</p>
-                        </td>
-                        <td class="active"><p>Active</p></td>
-                        <td class="role"><p>Owner</p></td>
-                        <td class="edit"><a href="#">Edit</a></td>
-                    </tr>
-                    <tr>
-                        <td class="people">
-                            <img src="/static/images/5.jpg" alt="">
-                            <div class="people-de">
-                                <h5>Charlie Kyle</h5>
-                                <p>Charlie@gmail.com</p>
-
-                            </div>
-                        </td>
-                        <td class="people-des">
-                            <h5>Software Engineer</h5>
-                            <p>Web dev</p>
-                        </td>
-                        <td class="active"><p>Active</p></td>
-                        <td class="role"><p>Owner</p></td>
-                        <td class="edit"><a href="#">Edit</a></td>
-                    </tr>
-                    <tr>
-                        <td class="people">
-                            <img src="/static/images/6.jpg" alt="">
-                            <div class="people-de">
-                                <h5>Ken Jos</h5>
-                                <p>Ken@gmail.com</p>
-
-                            </div>
-                        </td>
-                        <td class="people-des">
-                            <h5>Software Engineer</h5>
-                            <p>Web dev</p>
-                        </td>
-                        <td class="active"><p>Active</p></td>
-                        <td class="role"><p>Owner</p></td>
-                        <td class="edit"><a href="#">Edit</a></td>
-                    </tr>
-                    <tr>
-                        <td class="people">
-                            <img src="/static/images/UI-face-1.jpg" alt="">
-                            <div class="people-de">
-                                <h5>Leo San</h5>
-                                <p>Leo@gmail.com</p>
-
-                            </div>
-                        </td>
-                        <td class="people-des">
-                            <h5>Software Engineer</h5>
-                            <p>Web dev</p>
-                        </td>
-                        <td class="active"><p>Active</p></td>
-                        <td class="role"><p>Owner</p></td>
-                        <td class="edit"><a href="#">Edit</a></td>
-                    </tr>
-                    <tr>
-                        <td class="people">
-                            <img src="/static/images/IMG_20240925_164225195.jpg" alt="">
-                            <div class="people-de">
-                                <h5>Bipan Magar</h5>
-                                <p>bipan@gmail.com</p>
-
-                            </div>
-                        </td>
-                        <td class="people-des">
-                            <h5>Software Engineer</h5>
-                            <p>Web dev</p>
-                        </td>
-                        <td class="active"><p>Active</p></td>
-                        <td class="role"><p>Owner</p></td>
-                        <td class="edit"><a href="#">Edit</a></td>
-                    </tr>
+                                </div>
+                            </td>
+                            <td class="people-des">
+                                <h5>{{user.profile.title}}</h5>
+                                <p>{{user.profile.position}}</p>
+                            </td>
+                            {% if user.is_active == 1 %}
+                                <td class="active"><p>Active</p></td>
+                            {% else %}
+                                <td class="deactive"><p>DeActive</p></td>
+                            {% endif %}
+                            <td class="role"><p>{{user.profile.role}}</p></td>
+                            <td class="edit"><a href="#">Edit</a></td>
+                        </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

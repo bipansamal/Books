@@ -13,14 +13,14 @@ section {
   --Sniglet-font: "Sniglet", cursive;
   --Rubik: "Rubik", cursive;
   --Patua: "Patua One", cursive;
-  --Lobster: "Lobster", cursive; /* Fixed capitalization of 'Lobster' */
+  --Lobster: "Lobster", cursive;
   --light-black: #2e2c2caf;
   --bggradient: linear-gradient(to bottom, #dd2476, #ff512f);
   --light-gray: rgba(255, 255, 255, 0.877);
 }
 
 header a {
-  font-family: var(--Sniglet-font); /* Ensure the 'Sniglet' font is imported */
+  font-family: var(--Sniglet-font); 
   font-size: 0.9em;
   color: whitesmoke;
 }
@@ -53,11 +53,11 @@ header {
     display: block;
 }
   
-header .nav-item:last-child {
+header .nav-item4:last-child {
     padding-right: 10.5em;
 }
 
-header .nav-item {
+header .nav-item4 {
     padding: 0.9em;
 }
 

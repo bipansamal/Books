@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -48,6 +49,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        
+    # Custom Middleware
+    'middleware.middlewares.AuthMiddleware',  
 ]
 
 ROOT_URLCONF = 'website.urls'
@@ -136,6 +140,9 @@ STATICFILES_DIRS = [
     BASE_DIR, "static"
 ]
 
+# Configure media files path
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # to send email in the development server
 # Looking to send emails in production? Check out our Email API/SMTP product!

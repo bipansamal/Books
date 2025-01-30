@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/mobile.css">
+</head>
+<style>
+
+    :root {
+        --navbar-bg-gradient: linear-gradient(to bottom, #dd2476, #ff512f);
+        --navbar-link-color: white;
+        --navbar-link-hover-color: black;
+        --navbar-font: 'Rubik', cursive; /* You can replace this with your preferred font */
+        --navbar-brand-font: 'Lobster', cursive;
+        --light-gray: rgba(255, 255, 255, 0.877);
+    }
+    
+    .custom-navbar {
+        background: var(--navbar-bg-gradient);
+    }
+    
+    .custom-navbar .nav-link, .custom-navbar .navbar-brand {
+        color: var(--navbar-link-color) !important;
+        font-family: var(--navbar-font);
+    }
+    
+    .custom-navbar .nav-link:hover, .custom-navbar .navbar-brand:hover {
+        color: var(--navbar-link-hover-color) !important; /* Changes the color to black when hovered */
+    }
+    .card .card-text {
+        padding: 0 !important;  /* Remove Bootstrap padding */
+        margin: 0 !important;  /* Remove any margin */
+    }
+
+    .card{
+        margin-left: 5em;
+        margin-top: 5em;
+    }
+
+    {% comment %} .cards-wrapper{
+        column-gap: 15px;
+    } {% endcomment %}
+    
+</style>
+
+<body>
+    {% include "nav.html" %}
+    {% block content %}
+    
+    {% endblock content %}
+    {% include "footer.html" %}
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+crossorigin="anonymous"></script>
+<script src="/static/main.js"></script>
+</body>

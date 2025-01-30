@@ -17,10 +17,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
+#setting.py files
+from django.conf import settings
+
+#for static url
+from django.conf.urls.static import static
+
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("",include('base.urls')),
+    # path('admin/', admin.site.urls),
+    path("",include('base.urls.urls')),  #can access by all user admin,user or guest(without login)
+    path("user/",include('base.urls.user_urls')), #can oly access by logged in user
+    path("admin/",include('base.urls.admin_urls')), #can oly access by logged in admin
 
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

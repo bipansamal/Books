@@ -16,7 +16,7 @@ body {
     justify-content: center;
 }
 
-.container{
+.containered{
     position: fixed; /* This makes the container stay in the same position while scrolling */
     top: 50%; /* Vertically center */
     left: 50%; /* Horizontally center */
@@ -43,14 +43,14 @@ h2{
     font-size: 2em;
 }
 
-.form-group{
+.form-grouping{
     position: relative;
     width: 330px;
     border-bottom: 3px solid #fff;
     margin: 30px 0;
 }
 
-.form-group input{
+.form-grouping input{
     width: 100%;
     height: 50px;
     background: transparent;
@@ -62,7 +62,7 @@ h2{
     padding: 0 30px 0 10px;
 }
 
-.form-group label{
+/* .form-grouping label{
     position: absolute;
     top: 50%;
     left: 10px;
@@ -70,17 +70,17 @@ h2{
     font-size: 1.2em;
     color: #fff;
     transition: 0.5s;
-}
+} */
 
-.input:focus ~ label,
+/* .input:focus ~ label,
 input:valid ~ label
 {
     top: -5px;
-}
+} */
 
 
 
-.form-group i{
+.form-grouping i{
     position: absolute;
     top: 50%;
     right: 20px;
@@ -108,7 +108,7 @@ p>a:hover{
     font-style: italic;
 }
 
-#btn{
+#btn-9{
     width: 100%;
     height: 50px;
     border-radius: 40px;
@@ -121,7 +121,7 @@ p>a:hover{
     transform: 0.5s;
 }
 
-#btn:hover{
+#btn-9:hover{
     background-color: rgba(0, 0, 0, 0.3);
     color: #fff;
 }
